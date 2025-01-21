@@ -8,7 +8,7 @@
     <title>Hangman</title>
     <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
-    <script src="hangman.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 </head>
 
 <body>

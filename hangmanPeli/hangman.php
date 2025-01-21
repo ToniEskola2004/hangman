@@ -3,13 +3,15 @@ include "functions.php";
 
 include "header.php";
 
+include "category.php";
+
 resetScoreboard();
 
 setUpGame();
 
-dealWithGuesses();
+changeWord();
 
-$remainingLetters = remainingLetters();
+dealWithGuesses();
 
 if ($_SESSION['lives'] <= 0) {
     include "youLost.php";

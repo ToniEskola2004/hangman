@@ -1,15 +1,11 @@
-<form class="row g-3 justify-content-center mt-3" method="POST" action="">
-        <div class="col-auto">
-            <select class="form-select" name="guess">
-                <?php
-                foreach ($remainingLetters as $letter) {
-                    echo '<option value = "' . strtoupper(string: $letter) . '">' . strtoupper(string: $letter) . '</option>';
-                }
-                ?>
-            </select>
-        </div>
-
-        <div class="col-auto">
-            <button type="submit" name="submit" class="btn btn-primary mb-3">GUESS</button>
-        </div>
-    </form>
+<form class="row justify-content-center text-center mt-4" method="POST" action="">
+    <div class="col-7 justify-content-center g-3">
+        <?php
+        foreach (range('A', 'Z') as $letter) {
+            // Check if the current button should be disabled
+            $disabledAttribute = (in_array($letter, $_SESSION['guesses'])) ? 'disabled' : '';
+            echo '<button type="submit" name="guess" class="btn btn-primary col-auto m-1" value = "' . strtoupper(string: $letter) . '"' . $disabledAttribute . ' >' . strtoupper(string: $letter) . '</button>';
+        }
+        ?>
+    </div>
+</form>
